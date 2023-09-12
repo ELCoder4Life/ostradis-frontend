@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import ProductHunt from "../elements/productHunt";
 import Button from "../elements/button";
+import CustomDialog from "../elements/customDialog";
 
 export default function LandingHero() {
   const { data: session, status } = useSession();
@@ -14,6 +15,8 @@ export default function LandingHero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentTyping, setCurrentTyping] = useState("");
   const [charIndex, setCharIndex] = useState(0);
+
+  const [showDialog, setShowDialog] = useState(false);
 
   useEffect(() => {
     if (status === "authenticated") {
@@ -64,6 +67,9 @@ export default function LandingHero() {
               <div className="mt-12 flex flex-wrap justify-center gap-y-4 gap-x-4">
                 <>
                   <Button link="#" text="View Demo" />
+                  <div onClick={() => setShowDialog(true)}>
+                    <Button link="#" text="Show Dialog" type="primary" />
+                  </div>
                   <Button
                     link={isAuthenticated ? "/dashboard" : "/api/auth/signin"}
                     text="Awesome CTA"
@@ -104,6 +110,10 @@ export default function LandingHero() {
           </div>
         </LandingContainer>
       </div>
+      <CustomDialog
+        isOpen={showDialog}
+        closeModal={() => setShowDialog(false)}
+      />
     </>
   );
 }
