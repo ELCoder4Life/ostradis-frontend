@@ -1,4 +1,5 @@
 import Button from "./button";
+import { stripeCheckout } from "@/lib/stripe-checkout";
 
 export default function PricingCard({ tier }) {
   return (
@@ -23,6 +24,20 @@ export default function PricingCard({ tier }) {
             </li>
           ))}
         </ul>
+        <button
+          onClick={() => {
+            stripeCheckout({
+              lineItems: [
+                {
+                  price: "price_1NpX7gSJLMp4nJYnw5XrCMwR",
+                  quantity: 1,
+                },
+              ],
+            });
+          }}
+        >
+          BUY!
+        </button>
         <Button link={tier.buyLink} text="Purchase Plan" type="primary" />
       </div>
     </>
