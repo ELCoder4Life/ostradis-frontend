@@ -1,27 +1,38 @@
 import LandingLayout from "@/components/landingPage/landingLayout";
+import SEO from "@/components/seo";
 import LandingHeader from "@/components/landingPage/landingHeader";
 import LandingFeature from "@/components/landingPage/landingFeature";
 import LandingHowTo from "@/components/landingPage/landingHowTo";
 import LandingHero from "@/components/landingPage/landingHero";
+import LandingStats from "@/components/landingPage/landingStats";
 import LandingPricing from "@/components/landingPage/landingPricing";
 import LandingFooter from "@/components/landingPage/landingFooter";
 import LandingCta from "@/components/landingPage/landingCta";
-import { useTheme } from "next-themes";
+import { useEffect } from "react";
 
-export default function Home() {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
+export function Home() {}
 
-  setTheme("light");
+export async function getServerSideProps(context) {
+  return {
+    props: { show_user_page: false },
+  };
+}
 
+export default function PageWrapper(props) {
+  useEffect(() => {
+    const pricingElement = document.getElementById("pricing");
+    if (pricingElement) {
+      pricingElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
   return (
     <>
+      {/* <LandingPage {...props} /> */}
       <LandingLayout>
-        <LandingHeader />
-        <main className="space-y-40 mb-0">
+        <SEO title="PagePe.com - Pricing" />
+        <LandingHeader isDashboard={true} from="index" navLinkEnable={true} />
+        <main className="space-y-20 mb-0">
           <LandingHero />
-          <LandingFeature />
-          <LandingHowTo />
           <LandingPricing />
           <LandingCta />
         </main>
