@@ -58,7 +58,7 @@ export default function LandingHero() {
               <p className="mt-8 text-gray-700 dark:text-gray-300 text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor{" "}
-                <span className="font-bold text-white underline">
+                <span className="font-bold text-primary underline">
                   Lorem ipsum
                 </span>{" "}
                 <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit
