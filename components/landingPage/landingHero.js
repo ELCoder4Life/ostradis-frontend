@@ -1,6 +1,5 @@
 import LandingContainer from "./landingContainer";
 import { React, useEffect, useState } from "react";
-import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import ProductHunt from "../elements/productHunt";
 import Button from "../elements/button";
@@ -72,7 +71,7 @@ export default function LandingHero() {
                   </div>
                   <Button
                     link={isAuthenticated ? "/dashboard" : "/api/auth/signin"}
-                    text="Awesome CTA"
+                    text="Get Started"
                     type="primary"
                   />
                 </>
