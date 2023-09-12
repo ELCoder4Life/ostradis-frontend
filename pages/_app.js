@@ -4,30 +4,15 @@ import LandingLayout from "@/components/landingPage/landingLayout";
 import Script from "next/script";
 import SEO from "@/components/additional/seo";
 import { ThemeProvider } from "next-themes";
+import GoogleAnalytics from "@/components/additional/googleAnalytics";
 
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
-  const googleTrackingCode = "YOUR_GOOGLE _TRACKING_ID";
-
   return (
     <>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${googleTrackingCode}`}
-      />
-
-      <Script strategy="lazyOnload">
-        {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${googleTrackingCode}', {
-      page_path: window.location.pathname,
-      });
-  `}
-      </Script>
+      <GoogleAnalytics />
       <SEO />
       <SessionProvider session={session}>
         <ThemeProvider attribute="class">

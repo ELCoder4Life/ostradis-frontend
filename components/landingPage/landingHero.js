@@ -3,6 +3,7 @@ import { React, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import ProductHunt from "../elements/productHunt";
+import Button from "../elements/button";
 
 export default function LandingHero() {
   const { data: session, status } = useSession();
@@ -62,28 +63,12 @@ export default function LandingHero() {
               </p>
               <div className="mt-12 flex flex-wrap justify-center gap-y-4 gap-x-4">
                 <>
-                  <Link
-                    href="https://google.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 
-                  before:rounded-full
-                   before:bg-white before:transition before:duration-300 hover:before:scale-105 
-                   active:duration-75 active:before:scale-95 sm:w-max"
-                  >
-                    <span className="relative text-base font-semibold text-black">
-                      View Demo
-                    </span>
-                  </Link>
-
-                  <Link
-                    href={isAuthenticated ? "/dashboard" : "/api/auth/signin"}
-                    className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
-                  >
-                    <span className="relative text-base font-semibold text-white">
-                      Awesome CTA
-                    </span>
-                  </Link>
+                  <Button link="#" text="View Demo" />
+                  <Button
+                    link={isAuthenticated ? "/dashboard" : "/api/auth/signin"}
+                    text="Awesome CTA"
+                    type="primary"
+                  />
                 </>
               </div>
               <div className="py-8 mt-16 border-y border-gray-800 sm:flex flex-col sm:flex-row justify-between items-center">

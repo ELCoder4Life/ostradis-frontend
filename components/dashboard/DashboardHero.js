@@ -1,6 +1,5 @@
 import LandingContainer from "../landingPage/landingContainer";
 import { React, useEffect, useState } from "react";
-import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function DashboardHero() {
@@ -46,7 +45,7 @@ export default function DashboardHero() {
         <LandingContainer>
           <div className="relative pt-40 ml-auto">
             <div className="lg:w-2/3 text-center mx-auto">
-              <h1 className="text-white font-bold text-5xl md:text-6xl xl:text-7xl">
+              <h1 className="text-gray-700 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
                 Your Dashboard is Here
               </h1>
             </div>
