@@ -1,6 +1,6 @@
 import LandingLayout from "@/components/landingPage/landingLayout";
 import LandingHeader from "@/components/landingPage/landingHeader";
-import SEO from "@/components/seo/seo";
+import SEO from "@/components/additional/seo";
 import DashboardHero from "@/components/dashboard/DashboardHero";
 
 export default function Dashboard() {

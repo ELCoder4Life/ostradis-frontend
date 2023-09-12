@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import LandingLayout from "@/components/landingPage/landingLayout";
 import Script from "next/script";
-import SEO from "@/components/seo/seo";
+import SEO from "@/components/additional/seo";
 import { ThemeProvider } from "next-themes";
 
 export default function App({

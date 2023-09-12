@@ -48,11 +48,11 @@ export default function LandingHero() {
           <div className="relative pt-32 ml-auto">
             <div className="lg:w-2/3 text-center mx-auto">
               <ProductHunt />
-              <h1 className="text-white font-bold text-5xl md:text-6xl xl:text-7xl">
+              <h1 className="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
                 Your Awesome Product <br />
                 <span className="text-primary">{currentTyping}</span>
               </h1>
-              <p className="mt-8 text-gray-300 text-lg">
+              <p className="mt-8 text-gray-700 dark:text-gray-300 text-lg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor{" "}
                 <span className="font-bold text-white underline">
@@ -88,7 +88,7 @@ export default function LandingHero() {
               </div>
               <div className="py-8 mt-16 border-y border-gray-800 sm:flex flex-col sm:flex-row justify-between items-center">
                 <div className="text-center flex-1 mb-4 sm:mb-0">
-                  <h6 className="text-lg font-semibold text-white">
+                  <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
                     Lorem ipsum
                   </h6>
                   <p className="mt-2 text-gray-500">
@@ -97,7 +97,7 @@ export default function LandingHero() {
                   </p>
                 </div>
                 <div className="text-center flex-1 mb-4 sm:mb-0">
-                  <h6 className="text-lg font-semibold text-white">
+                  <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
                     Lorem ipsum
                   </h6>
                   <p className="mt-2 text-gray-500">
@@ -106,7 +106,7 @@ export default function LandingHero() {
                   </p>
                 </div>
                 <div className="text-center flex-1">
-                  <h6 className="text-lg font-semibold text-white">
+                  <h6 className="text-lg font-semibold text-gray-700 dark:text-white">
                     Lorem ipsum
                   </h6>
                   <p className="mt-2 text-gray-500">
