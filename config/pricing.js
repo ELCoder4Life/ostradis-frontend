@@ -1,6 +1,6 @@
 const pricingTiers = [
   {
-    title: "Basic",
+    title: "LemonSqueezy Payment",
     price: "$9",
     features: [
       "Our Awesome Feature 1",
@@ -10,33 +10,34 @@ const pricingTiers = [
       "Our Awesome Feature 5",
       "Our Awesome Feature 6",
     ],
-    buyLink: "#",
+    paymentProvider: "LemonSqueezy",
+    lemonSqueezy: {
+      buyLink:
+        "https://xpage.lemonsqueezy.com/checkout/buy/cc173c6e-d80a-4a50-a107-0afd31bddcc4?embed=1",
+    },
+    stripe: {},
   },
   {
-    title: "Standard",
+    title: "Stripe Payment",
     price: "$19",
     features: [
       "Our Awesome Feature 1",
       "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
+      "Our Awesome Feature 3",
+      "Our Awesome Feature 4",
+      "Our Awesome Feature 5",
+      "Our Awesome Feature 6",
     ],
-    buyLink: "#",
-  },
-  {
-    title: "Ultimate",
-    price: "$49",
-    features: [
-      "Our Awesome Feature 1",
-      "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
-      "Our Awesome Feature 2",
-    ],
-    buyLink: "#",
+    paymentProvider: "Stripe",
+    lemonSqueezy: {},
+    stripe: {
+      lineItems: [
+        {
+          price: "price_1NpX7gSJLMp4nJYnw5XrCMwR",
+          quantity: 1,
+        },
+      ],
+    },
   },
 ];
 

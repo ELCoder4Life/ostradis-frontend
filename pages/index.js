@@ -13,7 +13,7 @@ export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  setTheme("light");
+  setTheme("dark");
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function Home() {
           <LandingHero />
           <LandingFeature />
           <LandingHowTo />
-          <LandingPricing />
+          <LandingPricing/>
           <LandingTastimonials />
           <LandingCta />
         </main>
