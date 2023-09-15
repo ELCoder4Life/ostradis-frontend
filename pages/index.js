@@ -13,7 +13,7 @@ export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  setTheme("dark");
+  setTheme("light");
 
   return (
     <>

@@ -10,7 +10,7 @@ export default function LandingHero() {
   const userEmail = session?.user?.email;
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const words = ["Text A", "Text B", "Text C"];
+  const words = ["Langchain", "Pinecode", "OpenAI"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentTyping, setCurrentTyping] = useState("");
   const [charIndex, setCharIndex] = useState(0);
@@ -52,16 +52,16 @@ export default function LandingHero() {
             <div className="lg:w-2/3 text-center mx-auto">
               <ProductHunt />
               <h1 className="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
-                Your Awesome Product <br />
+                AI Boilerplate with <br />
                 <span className="text-primary">{currentTyping}</span>
               </h1>
               <p className="mt-8 text-gray-700 dark:text-gray-300 text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor{" "}
-                <span className="font-bold text-primary underline">
-                  Lorem ipsum
+                Ship your <span className="text-primary font-bold">AI</span>{" "}
+                product with NextJs super fast. with{" "}
+                <span className="font-bold text-primary">
+                  LangChain, PineCone & OpenAI
                 </span>{" "}
-                <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                <br /> Just change the config file
               </p>
               <div className="mt-12 flex flex-wrap justify-center gap-y-4 gap-x-4">
                 <>

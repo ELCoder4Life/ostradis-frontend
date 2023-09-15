@@ -2,8 +2,8 @@ import Head from "next/head";
 
 const SEO = ({ title, description, image }) => {
   //You can update your details here
-  const defaultTitle = "NextJs - Boilerplate code";
-  const defaultDescription = "NextJs - Boilerplate code";
+  const defaultTitle = "NextJs AI - Boilerplate code";
+  const defaultDescription = "NextJs AI - Boilerplate code";
   const defaultImageLink = "https://www.pagepe.com/pagepeHeader2.png";
   const url = "https://www.boilercode.co";
 
