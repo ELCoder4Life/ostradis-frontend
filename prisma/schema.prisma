@@ -63,3 +63,10 @@ model MyTable {
   content   String?
   createdAt DateTime @default(now())
 }
+
+model MyDocuments {
+  id        String   @id @default(cuid())
+  uploadId     String
+  fileName   String?
+  createdAt DateTime @default(now())
+}

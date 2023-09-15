@@ -56,6 +56,16 @@ CREATE TABLE "MyTable" (
     CONSTRAINT "MyTable_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "MyDocuments" (
+    "id" TEXT NOT NULL,
+    "uploadId" TEXT NOT NULL,
+    "fileName" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "MyDocuments_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "Account_provider_providerAccountId_key" ON "Account"("provider", "providerAccountId");
 

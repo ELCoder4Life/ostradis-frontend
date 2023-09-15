@@ -59,7 +59,7 @@ export default function LandingHero() {
                 Ship your <span className="text-primary font-bold">AI</span>{" "}
                 product with NextJs super fast. with{" "}
                 <span className="font-bold text-primary">
-                  LangChain, PineCone & OpenAI
+                  LangChain, Pinecone & OpenAI
                 </span>{" "}
                 <br /> Just change the config file
               </p>
