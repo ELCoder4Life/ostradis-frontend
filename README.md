@@ -1,38 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# How to use NextJs AI Boilerplate Code
 
-## Getting Started
+## To Start
+- run `npm install` to install all the required dependecies.
+- run `npm run dev` to run nextjs application.
 
-First, run the development server:
+## Update ENV Variables
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Create `.env.local` file and copy all the parameters from `.env.example`
+- Update your values in `.env.local` file.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### For User Auth using NextAuth
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+> NEXTAUTH_URL=YOUR_VALUE
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+> GOOGLE_CLIENT_ID=YOUR_VALUE
+> GOOGLE_CLIENT_SECRET=YOUR_VALUE
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+> NEXTAUTH_SECRET=YOUR_VALUE
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### For Database 
 
-## Learn More
+> DATABASE_URL=YOUR_VALUE
 
-To learn more about Next.js, take a look at the following resources:
+### For Emails and Login with Magic Link
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> MAILGUN_API_KEY=YOUR_VALUE
+> EMAIL_SERVER_HOST=YOUR_VALUE
+> EMAIL_SERVER_PORT=YOUR_VALUE
+> EMAIL_SERVER_USER=YOUR_VALUE
+> EMAIL_SERVER_PASSWORD=YOUR_VALUE
+> EMAIL_FROM=YOUR_VALUE
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### For Stripe Integration
 
-## Deploy on Vercel
+> NEXT_PUBLIC_STRIPE_PUBLIC_KEY=YOUR_VALUE
+> NEXT_PUBLIC_STRIPE_WEBHOOK_SECRET=YOUR_VALUE
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### LemonSqueezy Integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> LEMONSQUEEZY_API_KEY=YOUR_VALUE
+> LEMON_SQUEEZY_STORE_ID=YOUR_VALUE
+> LEMONS_SQUEEZY_PRODUCT_ID=YOUR_VALUE
+> LEMONS_SQUEEZY_SIGNATURE_SECRET=YOUR_VALUE
+
+### OpenAI Integration
+
+> OPENAI_API_KEY=YOUR_VALUE
+
+### For Langchain & Pinecone Integration
+
+> PINECONE_API_KEY=YOUR_VALUE
+> PINECONE_ENVIRONMENT=YOUR_VALUE
+> PINECONE_INDEX_NAME=YOUR_VALUE
+
+## Database related things
+- go to /prisma dir
+- `schema.prisma` file has all the table schema.
+- run `npx prisma migrate dev --name init` to run the migration and update into database.
+
+## NextAuth related things
+- got to /pages/api/auth/[...nextauth].js
+- modify next auth config based on your requirements.
+
+## Other APIs
+- /chat dir -> chat using Langchain 
+- /db dir -> database operation apis
+- /payments dir -> lemonsqueezy and stripe apis
+- /vector-db -> pinecone apis
+
+## Configs
+- You can change the config based on your requirements
+
+## Libs
+- Libs dir has all the library files for `lemonsqueezy`, `emails`, `prisma`, `strip checkout`
+
+## Components
+- All the reusable components for your SaaS
