@@ -65,7 +65,7 @@ export default function LandingHero() {
               </p>
               <div className="mt-12 flex flex-wrap justify-center gap-y-4 gap-x-4">
                 <>
-                  <Button link="#" text="View Demo" />
+                  <Button link="/blog/nextjs-ai" text="View Guide Documentation" />
                   <div onClick={() => setShowDialog(true)}>
                     <Button link="#" text="Show Dialog" type="primary" />
                   </div>
