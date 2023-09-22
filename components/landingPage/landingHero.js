@@ -10,7 +10,7 @@ export default function LandingHero() {
   const userEmail = session?.user?.email;
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const words = ["Langchain", "Pinecode", "OpenAI"];
+  const words = ["NextJs", "AI"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentTyping, setCurrentTyping] = useState("");
   const [charIndex, setCharIndex] = useState(0);
@@ -32,7 +32,7 @@ export default function LandingHero() {
         setCharIndex(0);
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
       }
-    }, 180);
+    }, 200);
 
     return () => clearInterval(typingInterval);
   }, [currentWordIndex, charIndex, words]);
@@ -52,20 +52,21 @@ export default function LandingHero() {
             <div className="lg:w-2/3 text-center mx-auto">
               <ProductHunt />
               <h1 className="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
-                AI Boilerplate with <br />
-                <span className="text-primary">{currentTyping}</span>
+                SaaS Boilerplate with <br />
+                {/* <span className="text-primary">{currentTyping}</span> */}
+                <span className="text-primary">NextJs & AI</span>
               </h1>
               <p className="mt-8 text-gray-700 dark:text-gray-300 text-lg">
-                Ship your <span className="text-primary font-bold">AI</span>{" "}
-                product with NextJs super fast. with{" "}
-                <span className="font-bold text-primary">
-                  LangChain, Pinecone & OpenAI
-                </span>{" "}
+                Ship your <span className="text-primary font-bold">SaaS</span>{" "}
+                product with NextJs super fast.
                 <br /> Just change the config file
               </p>
               <div className="mt-12 flex flex-wrap justify-center gap-y-4 gap-x-4">
                 <>
-                  <Button link="/blog/nextjs-ai" text="View Guide Documentation" />
+                  <Button
+                    link="/blog/nextjs-boilerplate"
+                    text="View Guide Documentation"
+                  />
                   <div onClick={() => setShowDialog(true)}>
                     <Button link="#" text="Show Dialog" type="primary" />
                   </div>
