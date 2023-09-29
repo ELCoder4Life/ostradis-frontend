@@ -28,7 +28,7 @@ const LandingHowTo = () => {
           <Video />
         </div>
         <div className="flex justify-center items-center mt-16">
-          <YoutubeVideo videoId="lRjdW8He-54" />
+        <YoutubeVideo videoId="lRjdW8He-54" />
         </div>
       </LandingContainer>
     </div>
