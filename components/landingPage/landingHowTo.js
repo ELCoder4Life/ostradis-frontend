@@ -1,5 +1,6 @@
 import Sprikle from "../elements/sprikle";
 import Video from "../elements/video";
+import YoutubeVideo from "../elements/youtubeVideo";
 import LandingContainer from "./landingContainer";
 
 const LandingHowTo = () => {
@@ -25,6 +26,9 @@ const LandingHowTo = () => {
         </div>
         <div className="flex justify-center items-center mt-6">
           <Video />
+        </div>
+        <div className="flex justify-center items-center mt-16">
+          <YoutubeVideo videoId="lRjdW8He-54" />
         </div>
       </LandingContainer>
     </div>
