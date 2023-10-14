@@ -59,9 +59,10 @@ export async function POST(request) {
     }
 
     case "subscription_updated": {
-      const subscription = await client.retrieveSubscription({
-        id: payload.data.id,
-      });
+      const subscription =
+        await lemonSqueezy.LemonSqueezyClient.getSubscription({
+          id: payload.data.id,
+        });
 
       const subscriptionId = subscription.data.id;
       const customerId = payload.data.attributes.customer_id;
