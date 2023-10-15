@@ -1,16 +1,12 @@
 import { Buffer } from "buffer";
 import crypto from "crypto";
-import { headers } from "next/headers";
-import { NextResponse } from "next/server";
-import rawBody from "raw-body";
-import { Readable } from "stream";
 import lemonSqueezy from "@/lib/lemonSqueezy";
+import getRawBody from "raw-body";
 
 export async function POST(request) {
-  const body = await rawBody(Readable.from(Buffer.from(await request.text())));
-  const headersList = headers();
+  const body = await getRawBody(request);
   const payload = JSON.parse(body.toString());
-  const sigString = headersList.get("x-signature");
+  const sigString = req.headers["x-signature"];
   const secret = process.env.LEMONS_SQUEEZY_SIGNATURE_SECRET;
   const hmac = crypto.createHmac("sha256", secret);
   const digest = Buffer.from(hmac.update(body).digest("hex"), "utf8");
@@ -24,22 +20,19 @@ export async function POST(request) {
     parseInt(payload.data.attributes.product_id) !==
     parseInt(process.env.LEMONS_SQUEEZY_PRODUCT_ID)
   ) {
-    return NextResponse.json({ message: "Invalid product" }, { status: 403 });
+    return res.status(403).json({ message: "Invalid product" });
   }
 
   // validate signature
   if (!crypto.timingSafeEqual(digest, signature)) {
-    return NextResponse.json({ message: "Invalid signature" }, { status: 403 });
+    return res.status(403).json({ message: "Invalid signature" });
   }
 
   const userId = payload.meta.custom_data[0];
 
   // Check if custom defined data i.e. the `userId` is there or not
   if (!userId) {
-    return NextResponse.json(
-      { message: "No userId provided" },
-      { status: 403 }
-    );
+    return res.status(403).json({ message: "No userId provided" });
   }
 
   switch (payload.meta.event_name) {
